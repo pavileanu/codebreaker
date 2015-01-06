@@ -4,6 +4,9 @@ require 'spec_helper'
 	  describe "#start" do
 		let(:output) { double('output').as_null_object }
 		let(:game)   { Game.new(output) }
+ 
+        before(:all) { @var = "inainte"; p @var}
+        after(:each) { p @var}
 
 		it "sends a welcome message" do
 		  output.should_receive(:puts).with('Welcome to Codebreaker!')
